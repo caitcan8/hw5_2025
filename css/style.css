@@ -1,16 +1,18 @@
-/* Animate the logo with keyframes.  (Here is a keyframes reference.) It should start at a width of 25px and grow to 475px.  It should also start with an opacity of 0 and end with an opacity of 1. The animation should take 5 seconds and only happen when the page is loaded. **You can complete this step later in the process - it won’t affect the larger views.  */
+
+
+/* Animate logo with keyframes: start at a width of 25px, then go to 475px. It shoudl start at opacity 0 and end with 1.  */
 @keyframes logomove{
     from {opacity: 0; width: 25px;}
     to {opacity: 1; width: 475px;}
     
 }
-
+/* It should take five seconds and happen when page is loaded. */
 #logo{
     animation: logomove 5s;
 }
 
 
-/* Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.
+/* Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.
  */
 
  body{
@@ -19,26 +21,31 @@
     background-color: #f1f1f1;
  }
 
- /* Edit the css for the header tag (all instances) to use flex to match our example. */
+ /* Edit the css for the header tag. */
  header{
+   /* use flex as column and align with the center to match reference */
     display:flex;
     flex-direction: column;
     align-items: center;
  }
 
- /* Edit the css for the nav_links class to use flex to match our example. Do not modify the list items or the links - modify the nav_links class to use flex. */
+ /* Edit the css for the nav_links class to use flex to match our example. */
  .nav_links{
+   /* use flex as a column to match image */
     display:flex;
     flex-direction:column;
  }
 
- /* Style the links so that they have the same color even after they have been visited. This is a “challenge” problem. You should not give or receive help when completing it.
+ /* Style the links so that they have the same color even after they have been visited.
  */
  
 a:visited {
+   /* set the color of the links to be blue always (the standard link color) */
     color: blue;
 }
-/* Identify the proper selector to style ONLY those header elements that are direct children of a card class.  The required styling is the following: 
+/* 
+Follow these requirements for styling header elements that are direct children of a card class:  
+The required styling is the following: 
 background: #288088,
 solid 2px border using #45ADAD,
 20px of padding on the top and the bottom, 
@@ -52,16 +59,19 @@ solid 2px border using #45ADAD,
     border-top-right-radius: 50px;
  }
  .card{
+   /* match reference image so base image curves as well */
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
  }
 
- /* Edit the css for the card class to match our example. Achieve this by using a flex-property to specify an initial “size” of 450px.  You need to think about this from a “flex” perspective and realize that flex-direction will affect the size of the elements.  You can see that in the mobile view they all have the same width. 
+ /* Edit the css for the card class . Achieve this by using a flex-property to specify an initial “size” of 450px.  You need to think about this from a “flex” perspective and realize that flex-direction will affect the size of the elements.  You can see that in the mobile view they all have the same width. 
 
 Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically.
  */
+ /* use flex to edit card class */
 
  .card{
+   /* set display to flex with a direction of column, with wrap and stretch to match image. Set flex-basis to 450px */
     display:flex;
     flex-basis: 450px;
     flex-direction:column;
@@ -71,21 +81,24 @@ Edit the css for the pricing class to match our example. You should use flex and
     
     
  }
+ /* use flex to edit pricing class  */
  .pricing{
+   /* set display to flex and change direction to column to match image. align content in teh center and wrap to match image and align correctly */
     display:flex;
    flex-direction:column;
    align-content:center;
     flex-wrap:wrap;
  }
 
- /* Style the images in the gallery class. These elements will have a solid 10px border with a color of #50C7C7, 10px margin on all four sides and a width of 300px.   */
+ /* Style the images in the gallery class. Follow these specifications: These elements will have a solid 10px border with a color of #50C7C7, 10px margin on all four sides and a width of 300px.   */
  .gallery img{
     border: 10px solid #50C7C7;
     margin: 10px;
     width:300px;
  }
- /* Edit the css for the gallery class to use flex to match our example. (You may want to look at the screen shots from 1200px and 1500px as well -  the changes are not from media queries, but from the use of flex.) */
+ /* Edit the css for the gallery class. */
  .gallery{
+   /* set display to flex and change the direction to row, to match the image. Align properly using justify content and flex wrap */
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -96,32 +109,40 @@ Edit the css for the pricing class to match our example. You should use flex and
  /* Edit the css for the header tag (all instances) and the nav_links class to match our example using flex-properties. The logo should be as far to the left as possible and the links as far to the right as possible. Use flex properties, NOT position properties.
  */
  @media(min-width: 900px){
+   /* edit the header */
     header {
+      /* change direction to be row and align to match image  */
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
     .nav_links{
+      /* arrange the links in a row as well */
         display:flex;
         flex-direction:row;
      }
      /* Edit the css for the pricing and card classes to match our example. Part of achieving this is by using a flex-property to specify a “size” of 275px. Notice that the elements do not have the same height, but do have the same width. */
+     /* edit the card class  */
      .card{
+      /* set a basis of 275 px */
         flex-basis: 275px;
      }
      .pricing{
+      /* change pricing to row direction as well and adjust alignment according to image  */
         flex-direction: row;
         align-items: center;
          justify-content: center;
      }
      /* Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. Make sure that it is always visible.  */
      body > header {
+      /* change first header so that it has a fixed position and moves as you scroll, also set the width to 100  */
         position:fixed;
         width: 100%;
         
      }
      main{
+      /* adjust padding on main so that fixed header does not cover needed text (exact value from inspect element) */
         padding-top: 81px; 
      }
     
@@ -130,6 +151,7 @@ Edit the css for the pricing class to match our example. You should use flex and
  @media (prefers-reduced-motion){
     /* The logo should appear but not be animated if prefers-reduced-motion is selected in the accessibility preferences.  */
     #logo{
+      /* set logo animation to none so there is no motion */
         animation:none;
 
     }
@@ -137,7 +159,7 @@ Edit the css for the pricing class to match our example. You should use flex and
 
  @media print {
     /* Change the font on your body to Arial with a backup value of  Helvetica */
-    /* The background image should be removed.  */
+    /* set background image to none  */
     body{
         font-family: Arial,Helvetica;
         background-image: none;
@@ -145,46 +167,50 @@ Edit the css for the pricing class to match our example. You should use flex and
 
     }
     
-    /* Edit the nav/nav_links elements so that they are spaced according to the image above. */
+    /* Edit the nav/nav_links elements so that they are spaced according reference image. */
 
     .nav_links{
+      /* change the flex direction and use stretch and space around to match the reference image */
         width: 100%;
         flex-direction: row;
         align-items:stretch;
         justify-content: space-around;
-        /* fix this spacing */
+       
 
     }
     
-    /* Edit the pricing class so that the elements align along the bottom.  As long as it aligns along the bottom we don't care if the cards aren't the same height. */
-    /* Edit the pricing class so that the elements align along the bottom.  As long as it aligns along the bottom we don't care if the cards aren't the same height. */
+    /* Edit the pricing class so that the elements align along the bottom.  */
     .pricing{
+      /* edit pricing to match reference (change wrap, justification and alignment) */
         flex-direction: row ;
-        
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: flex-end;
      }
      /* The card elements should have a solid border 2px of #45ADDD and use flex-basis of 325px.  */
      .card{
+      /* set flex basis of 325 px and set a border) */
         flex-basis: 325px;
         border:2px solid #45ADDD;
      }
      /* No part of the gallery should be visible. */
      .gallery, #gallery{
-        /* visibility: hidden; */
+        /* set display to none so that it is like the gallery was never there  */
         display:none;
      }
 
       /* Without using list-style-type add the thumbs up entity as shown in the cards */
      .card ul li:nth-child(2)::after{
+      /* insert this emoji after the 2nd child of a list item in the card class */
         content: "👍";
      }
      footer{
+      /* move the footer to inherit its position and show after a page break */
         position:inherit;
         page-break-before: always;
      }
      nav{
+      /* set nav bar to full width with flex */
         display:flex;
         width: 100%;
      }
